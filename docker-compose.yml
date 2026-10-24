@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: chat
+      POSTGRES_PASSWORD: chat
+      POSTGRES_DB: chat
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://chat:chat@db:5432/chat
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+    depends_on:
+      - db
+volumes:
+  pgdata:
