@@ -1,4 +1,4 @@
-# Chat API with Persistent Memory
+# MemoryChat: Conversational AI API with Persistent Memory
 
 A FastAPI `/chat` endpoint that sends multi-turn conversations to an LLM (Google Gemini) and stores every thread in a database, so context survives restarts.
 

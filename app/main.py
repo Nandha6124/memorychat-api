@@ -12,7 +12,7 @@ from .schemas import ChatRequest, ChatResponse, HistoryResponse
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Chat API with Persistent Memory")
+app = FastAPI(title="MemoryChat API")
 
 
 def get_llm() -> Callable[[List[Dict[str, str]]], str]:
