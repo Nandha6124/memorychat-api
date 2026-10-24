@@ -4,6 +4,11 @@ A FastAPI `/chat` endpoint that sends multi-turn conversations to an LLM (Google
 
 **Stack:** Python, FastAPI, Pydantic, SQLAlchemy, PostgreSQL (SQLite for quick local runs), Docker
 
+## Example
+A follow-up question in the same session. The service loads the saved conversation, so the model remembers what was said earlier:
+
+![MemoryChat answering from saved conversation history](docs/screenshot-memory.png)
+
 ## Features
 - `POST /chat` – send a message; omit `session_id` to start a new thread, pass it to continue one
 - `GET /sessions/{id}` – replay the stored conversation
